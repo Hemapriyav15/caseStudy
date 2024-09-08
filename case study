@@ -1,0 +1,279 @@
+CREATE DATABASE chocolate_factory;
+use chocolate_factory;
+# Creating manufacture table and inserting the values to the table
+# Manufacture Table..
+            create table manufacture(
+                            manufacture_id int,
+                            name varchar(50),
+                            country varchar(100)
+                  );
+         INSERT  INTO  manufacture VALUES
+                              (1,"Cocoa Delight","Belgium"),
+                              (2,"Sweet Treats","Switzerland"),
+						       (3,"Choco Heaven","USA"),
+                              (4,"Divine Chocolates","UK"),
+                              (5,"Chocolate Masters","Germany"),
+                              (6,"Sweet Sensations","France"),
+                              (7,"ChocoDreams","Italy"),
+                              (8,"Gourmet Chocolates","Netherlands"),
+		   (9,"Heavenly Bites","Spain"),
+                              (10,"Cocoa Creations","Belgium"),
+                              (11,"Delightful Chocolates","Switzerland"),
+		  (12,"Premium Chocolates","USA"),
+                              (13,"Luxury Bites","UK"),
+                              (14,"Fine Chocolates","Germany"),
+                              (15,"Sweet Indulgence","France"),
+                              (16,"Chocolate Delights","Italy"),
+		   (17,"Exquisite Chocolates","Netherlands"),
+                              (18,"Choco Bliss","Spain"),
+                              (19,"Masterpiece Chocolates","Belgium"),
+                              (20,"Choco Pleasures","Switzerland"),
+		    (21,"Sweet Joy","USA"),
+                              (22,"Choco Parlor","UK"),
+                              (23,"Cocoa Artisans","Germany"),
+                              (24,"Choco Fantasy","France"),
+                              (25,"Choco Elegance","Italy"),
+                              (26,"Choco Delight","Netherland"),
+		   (27,"Choco Lovers","Spain"),
+                              (28,"Divine Bites","Belgium"),
+                              (29,"Choco Treats","Switzerland"),
+                              (30,"Choco Moments","USA");
+
+
+
+
+# Creating a chocolate table
+# CHOCOLATE TABLE
+  create table chocolate(
+                          ChocolateID int,
+                          Name varchar(50),
+                         Type varchar(30),
+                          ManufacturerID int
+);
+# inserting the values to the table
+insert into chocolate values
+                      (101,"Dark Fantasy","Dark Chocolate",1),
+                      (102,"Milk Bliss","Milk Chocolate",1),
+	         (103,"Almond Joy","Nut Chocolate",2),
+	          (104,"White Dream","White Chocolate",2),
+                        (105,"Hazelnut Heaven","Nut Chocolate",3),
+                        (106,"Caramel Crunch","Milk Chocolate",3),
+                       (107,"Mint Delight","Dark Chocolate",4),
+                       (108,"Berry Bliss","White Chocolate",4),
+                       (109,"Orange Zest","Dark Chocolate",5),
+	           (110,"Coconut Dream","Milk Chocolate",5),
+                        (111,"Sea Salt Caramel","Dark Chocolate",6),
+                         (112,"Raspberry Ripple","White Chocolate",6),
+	            (113,"Maple Delight","Milk Chocolate",7),
+                         (114,"Cherry Blossom","Dark Chocolate",7),
+                          (115,"Peanut Butter Bliss","Milk Chocolate",8),
+                           (116,"Toffee Crunch","Dark Chocolate",8),
+                          (117,"Lavender Love","White Chocolate",9),
+                          (118,"Mocha Magic","Dark Chocolate",9),
+                          (119,"Blueberry Burst","Milk Chocolate",10),
+                           (120,"Lemon Twist","White Chocolate",10),
+                           (121,"Spicy Chili","Dark Chocolate",11),
+                            (122,"Honey Delight","Milk Chocolate",11),
+                             (123,"Pistachio Perfection","Nut Chocolate",12),
+                              (124,"Ginger Snap","Dark Chocolate",12),
+                              (125,"Vanilla Bean","White Chocolate",13),
+                               (126,"Espresso Shot","Dark Chocolate",13),
+                              (127,"Matcha Magic","Milk Chocolate",14),
+                               (128,"Cinnamon Swirl","Dark Chocolate",14),
+                                (129,"Strawberry Cream","White Chocolate",15),
+                               (130,"Banana Bliss","Milk Chocolate",15);
+
+
+#Creating Retailer table
+CREATE TABLE Retailer (
+                                      RetailerID INT PRIMARY KEY,
+                                      Name VARCHAR(100),
+                                      Country VARCHAR(50),
+                                       ContactNumber VARCHAR(20)
+);
+
+
+
+
+#Inserting values into the Retailer table..
+Insert into Retailer values (1, 'SuperChocoMart', 'USA', '123-456-7890'),
+                                           (2, 'Sweet Treats Shop', 'Canada', '234-567-8901'),
+                                            (3, 'Choco Paradise', 'UK', '345-678-9012'),
+                                            (4, 'Gourmet Choco', 'France', '456-789-0123'),
+                                           (5, 'Belgian Delights', 'Belgium', '567-890-1234'),
+                                          (6, 'Swiss Choco House', 'Switzerland', '678-901-2345'),
+                                          (7, 'Choco Lovers', 'Australia', '789-012-3456'),
+                                           (8, 'Candy Haven', 'Germany', '890-123-4567'),
+                                          (9, 'Choco Heaven', 'Netherlands', '901-234-5678'),
+                                         (10, 'Deluxe Chocolates', 'Italy', '012-345-6789'),
+                                        (11, 'ChocoLand', 'Spain', '123-456-7891'),
+                                         (12, 'Choco Emporium', 'Portugal', '234-567-8902'),
+                                         (13, 'Chocolate Bliss', 'Sweden', '345-678-9013'),
+                                         (14, 'Sweet Dreams', 'Norway', '456-789-0124'),
+                                         (15, 'Choco Wonders', 'Denmark', '567-890-1235'),
+                                        (16, 'Choco Magic', 'Finland', '678-901-2346'),
+                                        (17, 'Choco Delight', 'Austria', '789-012-3457'),
+                                       (18, 'Choco Kingdom', 'Ireland', '890-123-4568'),
+                                       (19, 'Pure Chocolate', 'Belgium', '901-234-5679'),
+                                         (20, 'Choco House', 'USA', '012-345-6780');
+#Write a query to select all columns from the manufacture table ?
+SELECT * FROM manufacture;
+
+#Write a query for all manufacture based in belgium ?
+SELECT * FROM manufacture
+WHERE country="Belgium";
+
+#Write a query to select all chocolates with their types ?
+SELECT name,type FROM chocolate;
+
+#Write a query to find all chocolates that are “Milk Chocolates” ?
+select name,type from chocolate
+where type="Milk Chocolate";
+
+
+
+#Write a sql query to count the number of manufacture ?
+SELECT count(*) 
+AS total_manufacture 
+FROM manufacture;
+
+#Write a sql query to count the number of chocolates ?
+SELECTcount(*) FROM chocolate;
+
+#Write a query to find manufacture with id is 5?
+select * from manufacture
+where manufacture_id=5;
+
+
+#Select a distinct type of chocolates?
+select distinct(type) from chocolate;
+
+#Write a query to find the average number of chocolates produced by manufacture?
+Select avg(manufacture_id) 
+as avg_manufacture
+from manufacture;
+
+
+#Write a query to select name, types of chocolates produced by manufacturers based  ID is 5.
+select ManufacturerID,name
+from chocolate
+where ManufacturerID in
+(select manufacture_id
+from manufacture
+where manufacture_id=5);
+
+
+
+ #Write a query to join the chocolate and manufacture with the condition that the country is belgium?
+select ChocolateID,country
+from chocolate c
+join manufacture m
+on c.ManufacturerID=m.manufacture_id
+where country="Belgium";
+
+#Write a query to select the null values from the manufacture table ?
+ select * from manufacture
+where manufacture_id is null;
+
+
+#Write a sql query order by descending order based on name in the chocolate?
+select ChocolateID,name from chocolate
+order by name desc;
+
+#Write a sql query order by descending order based on name and limit the five records
+ #in the chocolate?  
+select ChocolateID,name from chocolate
+order by name desc
+limit 5;
+
+
+Write a sql query to change the name to uppercase in the chocolate table?
+select upper(name)
+from chocolate;
+
+Write a sql query to return a list of customers with the following country [“France”,“Belgium”,“UK”]: From  Retailer table ?
+select Country
+from Retailer
+where Country in ("France","Belgium","UK");
+
+
+
+#Write a sql query to return a list of customers without the following country [“France”,“UK”]: From  Retailer table ?
+
+select Country
+from Retailer
+where Country not in ("France","UK");
+
+#Write a query to replace the word ‘Cocoa’ with ‘chocos’ in a manufacture table?
+select name,
+replace(name,'Cocoa','Chocos') as new_name
+ from manufacture;
+
+#Write a query to Count the number of chocolates produced by each manufacture?
+
+
+SELECT m.manufacture_id, m.name AS Manufacturer, COUNT(c.ChocolateID) AS NumberOfChocolates
+FROM manufacture m
+LEFT JOIN chocolate c ON m.manufacture_id = c.ManufacturerID
+GROUP BY m.manufacture_id, m.name
+ORDER BY NumberOfChocolates DESC;
+
+#Write a query to list out the first 10 chocolates in alphabetical order?
+SELECT ChocolateID, Name, Type, ManufacturerID
+FROM chocolate
+ORDER BY Name ASC
+LIMIT 4;
+
+
+#Write a query for retailers whose name ends with 'Mart'?
+SELECT * FROM Retailer
+WHERE Name LIKE '%Mart';
+
+#Write a query to combine the manufacture and retailer countries ?
+SELECT country AS Location
+FROM manufacture
+UNION
+SELECT country AS Location
+FROM retailer
+limit 3;
+
+# List all manufacture and retailer countries, including duplicates ?
+SELECT country AS Location
+FROM manufacture
+UNION ALL
+SELECT country AS Location
+FROM retailer;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
